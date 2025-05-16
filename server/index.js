@@ -3,15 +3,16 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const Recipe = require("./models/Recipe");
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+import { GoogleGenAI } from '@google/genai';
+
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
 
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Initialize Gemini AI
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // MongoDB Connection
 mongoose

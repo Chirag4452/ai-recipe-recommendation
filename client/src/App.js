@@ -15,7 +15,7 @@ function App() {
     setGeneratedRecipe(null);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/recipes/generate", {
+      const response = await axios.post("https://ai-recipe-recommendation.onrender.com", {
         ingredients: ingredients.split(",").map((item) => item.trim()),
         dietaryRestrictions,
       });

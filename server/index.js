@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const Recipe = require("./models/Recipe");
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
+dotenv.config();
 
 const app = express();
 app.use(cors());
